@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    path:
-      - Dockerfile
 
 jobs:
   Build:
@@ -13,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git - Get Sources
-      uses: actions/checkout@master
+        uses: actions/checkout@master
+
       - name: Docker - Build
         run: docker build . --file Dockerfile --tag hello-github:$(date +%s)
-
   #Publish:
   #  name: Publish on Github Package Registry
   #  runs-on: ubuntu-latest
