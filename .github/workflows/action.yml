@@ -14,7 +14,10 @@ jobs:
         uses: actions/checkout@master
 
       - name: Docker - Build
-        run: docker build . --file Dockerfile --tag hello-github:$(date +%s)
+        run: docker build . --file Dockerfile --tag hello-github
+
+      - name: Docker - test
+        run: docker run --rm hello-github
   #Publish:
   #  name: Publish on Github Package Registry
   #  runs-on: ubuntu-latest
