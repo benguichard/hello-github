@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.pkg.github.com
-          repository: ${{ GITHUB_REPOSITORY }}
+          repository: benguichard/hello-github
           auto_tag: true
