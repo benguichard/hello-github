@@ -20,6 +20,4 @@ jobs:
         run: docker run --rm hello-github
 
       - name: Docker - Publish
-        run: docker login docker.pkg.github.com --username benguichard && \
-        docker tag hello-github docker.pkg.github.com/benguichard/hello-github/hello-github:latest && \
-        docker push docker.pkg.github.com/benguichard/hello-github/hello-github:latest
+        run: docker login docker.pkg.github.com --username benguichard && docker tag hello-github docker.pkg.github.com/benguichard/hello-github/hello-github:latest && docker push docker.pkg.github.com/benguichard/hello-github/hello-github:latest
