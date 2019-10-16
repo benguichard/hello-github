@@ -20,10 +20,6 @@ jobs:
         run: docker run --rm hello-github
 
       - name: Docker - Publish
-        uses: jerray/publish-docker-action@master
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.pkg.github.com
-          repository: benguichard/hello-github
-          auto_tag: true
+        run: docker login docker.pkg.github.com --username benguichard
+        run: docker tag hello-github docker.pkg.github.com/benguichard/hello-github/hello-github:latest
+        run: docker push docker.pkg.github.com/benguichard/hello-github/hello-github:latest
