@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  Build:
-    name: Build Docker image
+  Docker:
+    name: Build and Publish Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Git - Get Sources
@@ -19,10 +19,6 @@ jobs:
       - name: Docker - test
         run: docker run --rm hello-github
 
-  Publish:
-    name: Publish on Github Package Registry
-    runs-on: ubuntu-latest
-    steps:
       - name: Docker - Publish
         uses: jerray/publish-docker-action@master
         with:
